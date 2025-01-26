@@ -51,10 +51,11 @@ const App = () => {
             case 'final':
                 return (
                     <div className="final-message">
-                        Thank you for your participation in this experiment!
+                        Vielen Dank für Ihre Teilnahme an diesem Experiment
+
                         <br />
                         <br />
-                        Best Regards,
+                        Mit freundlichen Grüßen,
                         <div>Febryeric M. Parantean</div>
                     </div>
                 );

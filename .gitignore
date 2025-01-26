@@ -1,2 +1,13 @@
-node_modules/.cache/gh-pages/https\!github.com\!fmparantean\!dataviz_project.git/
-node_modules/.cache/gh-pages/https\!github.com\!fmparantean\!datavis_thesis.git/
+# Ignore node_modules directory
+node_modules/
+
+node_modules
+
+# Ignore build directory
+build/
+
+# Ignore log files
+*.log
+
+# Ignore environment variable files
+.env

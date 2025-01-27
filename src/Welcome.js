@@ -1,59 +1,87 @@
 import React, { useState } from 'react';
 
-const Welcome = ({ onQGIS }) => {
-    const [isChecked, setIsChecked] = useState(false); 
-    const [errorMessage, setErrorMessage] = useState(''); 
+const Welcome = ({ onStart }) => {
+    const [checkedState, setCheckedState] = useState(new Array(5).fill(false)); 
+    const [errorMessage, setErrorMessage] = useState('');
 
-    const handleCheckboxChange = () => {
-        setIsChecked(!isChecked); 
+    const handleCheckboxChange = (position) => {
+        const updatedCheckedState = checkedState.map((item, index) =>
+            index === position ? !item : item
+        );
+
+        setCheckedState(updatedCheckedState);
         setErrorMessage(''); 
     };
 
-    const handleClick = () => {
-        if (!isChecked) {
-            setErrorMessage('You must confirm that you have read and understand the instruction before proceeding.');
+    const handleStart = () => {
+        if (checkedState.some(item => !item)) {
+            setErrorMessage('You must tick all the declarations to be eligible for this experiment.');
         } else {
-            onQGIS(); 
+            setErrorMessage('');
+            onStart();
         }
     };
 
     return (
         <div className="welcome-container">
-            <h1 className="welcome-title">Instruction</h1>
-            <p className="welcome-description">
-            The data visualization is using the Travel Experience in Public Transport Dataset (https://osf.io/rgkvq/). 
-            The static and interactive maps were created and developed by Quantum Geographic Information System (QGIS) software and D3.js with React respectively.
-            The static map contains of 4 images which are depict: heart rate variability (HRV), heart rate median absolute deviation (HR_mad), stress level, and journey satisfaction values.
-            The interactive map contains of a histogram and a map. You can adjust in "Y-Value Filter" to decided either HRV, HR_mad, stress level, or journey satisfation.
-            The details of the instruction of the each map can be found in the respective page.
-
+            <h1>Welcome to the Data Visualization Experiment</h1>
+            <h3>My name is Febryeric M. Parantean, and I am a master's student in the Cognitive Science program at Osnabrück University.</h3>
+            <h3>This experiment is part of my master's thesis under the supervision of: </h3>
+                <h5>Prof. Dr. phil. Kai-Uwe Kühnberger (Osnabrück University) </h5>
+                <h5>Dr. Esther Bosch (German Aerospace Center/ DLR)</h5>
+            <h4>You are going to evaluate the "hexagonal bin (hexbin)" data visualization between the static and the interactive map.</h4>
+            <h4>You need to use a mouse and a recommended screen monitor minimum of 19 inches. </h4>
+    
+            <p className="checkboxes">
+                <h2>As a participant, I declare that ...</h2>
             </p>
-            <p className="welcome-description">
-            First, you will explore the QGIS map and then the D3-React map. You need to gain as much information as you can. 
-            There is no limited time for this experiment, and you can make your notes. Once you finish with the map, click the questionnaire button, fill in the form, and submit it. 
-            After completing the two questionnaires, then you can click the "Finish" button to end the experiment.
-
-            </p>
-            <p className="welcome-description">
-                Here is the step of this experiment:
-                <ul>
-                    <li>Explore the static map (QGIS)</li>
-                    <li>Fill in the first questionnaire</li>
-                    <li>Explore the interactive map (D3-React)</li>
-                    <li>Fill in the second questionnaire</li>
-                </ul>
-            </p>
-            <div>
-                <input 
-                    type="checkbox" 
-                    checked={isChecked} 
-                    onChange={handleCheckboxChange} 
-                />
-                <label>I declare that I have read and understand the instructions</label>
+            <div className="checkboxes">
+                <label>
+                    <input
+                        type="checkbox"
+                        checked={checkedState[0]}
+                        onChange={() => handleCheckboxChange(0)}
+                    />
+                    I am 18 years old and older
+                </label>
+                <label>
+                    <input
+                        type="checkbox"
+                        checked={checkedState[1]}
+                        onChange={() => handleCheckboxChange(1)}
+                    />
+                    I have no color blindness
+                </label>
+                <label>
+                    <input
+                        type="checkbox"
+                        checked={checkedState[2]}
+                        onChange={() => handleCheckboxChange(2)}
+                    />
+                    I am not suffering from Trypophobia or fear of hexagonal shapes
+                </label>
+                <label>
+                    <input
+                        type="checkbox"
+                        checked={checkedState[3]}
+                        onChange={() => handleCheckboxChange(3)}
+                    />
+                    I agree to do this experiment
+                </label>
+                <label>
+                    <input
+                        type="checkbox"
+                        checked={checkedState[4]}
+                        onChange={() => handleCheckboxChange(4)}
+                    />
+                    I am allowed to stop this experiment for a specific reason
+                </label>
             </div>
+
             {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-            <button onClick={handleClick} className="welcome-button">
-                Go to QGIS Map           
+
+            <button onClick={handleStart} className="instructions-button">
+                START
             </button>
         </div>
     );

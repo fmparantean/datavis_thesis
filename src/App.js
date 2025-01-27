@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import Welcome from './Welcome';
+import Instructions from './Instructions';
 import QGIS from './QGIS';
-import Declaration from './Declaration';
+import Welcome from './Welcome';
 import PageTest from './PageTest';
 import { useWorldAtlas } from './useWorldAtlas';
 import './App.css';
 import { useData } from './useData';
-import { Hexbinmap } from './HexbinMap/index.js';
-import { DateHistogram } from './DateHistogram/index.js';
+import { Hexbinmap } from './HexbinMap/index';
+import { DateHistogram } from './DateHistogram/index';
 import { scaleLinear } from 'd3';
-import ColorLegend from './HexbinMap/ColorLegend.js';
+import ColorLegend from './HexbinMap/ColorLegend';
 import * as d3 from 'd3';
 import Filters from './Filters';
-import Instructions from './Instructions';
+import D3Ins from './D3Ins';
 
 const width = 900;
 const height = 1000;
@@ -20,7 +20,7 @@ const dateHistogramSize = 0.24;
 const orderedDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 const App = () => {
-    const [currentPage, setCurrentPage] = useState('declaration');
+    const [currentPage, setCurrentPage] = useState('welcome');
     const worldAtlas = useWorldAtlas();
     const data = useData();
     const [brushExtent, setBrushExtent] = useState(null);
@@ -30,20 +30,19 @@ const App = () => {
     const [yValueField, setYValueField] = useState("HRV");
     const [hexbinSize, setHexbinSize] = useState(5);
 
-    // Navigation functions
-    const handleStartDeclaration = () => setCurrentPage('pagetest');
+    const handleStartWelcome = () => setCurrentPage('pagetest');
     const handleGoToQGIS = () => setCurrentPage('qgis'); 
-    const handleGoToWelcome = () => setCurrentPage('welcome'); 
+    const handleGoToWelcome = () => setCurrentPage('instruksi'); 
     const handleBackToD3React = () => setCurrentPage('mainapp');
 
     const renderPage = () => {
         switch (currentPage) {
-            case 'declaration':
-                return <Declaration onStart={handleStartDeclaration} />;
+            case 'welcome':
+                return <Welcome onStart={handleStartWelcome} />;
             case 'pagetest':
                 return <PageTest onNext={handleGoToWelcome} />; 
-            case 'welcome':
-                return <Welcome onQGIS={handleGoToQGIS} />; 
+            case 'instruksi':
+                return <Instructions onQGIS={handleGoToQGIS} />; 
             case 'qgis':
                 return <QGIS onBack={handleBackToD3React} />; 
             case 'mainapp':
@@ -60,7 +59,7 @@ const App = () => {
                     </div>
                 );
             default:
-                return <Declaration onStart={handleStartDeclaration} />;
+                return <Welcome onStart={handleStartWelcome} />;
         }
     };
 
@@ -152,7 +151,7 @@ const App = () => {
                     </g>
                 </svg>
 
-                <Instructions setCurrentPage={setCurrentPage} />
+                <D3Ins setCurrentPage={setCurrentPage} />
             </div>
         );
     };

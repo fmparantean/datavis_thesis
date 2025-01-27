@@ -1,98 +1,60 @@
-import React, { useState } from 'react'; 
+import React, { useState } from 'react';
 
-const Instructions = ({ setCurrentPage }) => {
-    const [isQGISChecked, setIsQGISChecked] = useState(false); 
-    const [isD3Checked, setIsD3Checked] = useState(false); 
+const Instructions = ({ onQGIS }) => {
+    const [isChecked, setIsChecked] = useState(false); 
     const [errorMessage, setErrorMessage] = useState(''); 
 
-    const handleQGISRedirect = () => {
-        
-        if (!isQGISChecked) {
-            setErrorMessage('You must confirm that you have finished with the D3-React map before going to the questionnaire.');    
-        } else {
-          
-            window.open("https://forms.gle/8BJUm4goDgqYuvCw7", "_blank");
-        }
+    const handleCheckboxChange = () => {
+        setIsChecked(!isChecked); 
+        setErrorMessage(''); 
     };
 
-    const handleFinish = () => {
-     
-        if (!isD3Checked) {
-            setErrorMessage('You must confirm that you have submitted the D3-React questionnaire before finishing this experiment.');    
+    const handleClick = () => {
+        if (!isChecked) {
+            setErrorMessage('You must confirm that you have read and understand the instruction before proceeding.');
         } else {
-            setErrorMessage(''); 
-            setCurrentPage('final');
+            onQGIS(); 
         }
     };
 
     return (
-        <div className="instructions">
-            <h3>How to Operate</h3>
-            <ul>
-                <li>Again, if you see that these texts are covering the map, please ZOOM OUT (ctrl/command -) your browser.</li>
-                <li>The displayed data on the hexbin map is based on the highlighted area that is marked on the histogram.</li>
-                <li>Move the "brush" extension (blue square) on the histogram to display and change the data in the hexbin map. You can adjust the brush function by sliding it left or right, and resizing it by clicking and dragging on the edge, in or out.</li>
-                <li>On the Filters, you can choose your preferred data that you inted to display on the histogram and hexbin map. Adjust your hexagonal size in “Hexbin size filter".</li>
-                <li>Point your mouse at a specific hexagonal shape on the map to find out its mean value and how many data points are contained within.</li>
-                <li>You HAVE NO limited time to explore this map. ENJOY your wandering before you decided to Go to D3-React Questionnaire and then are allowed finish this experiment.
-                </li>
-            </ul>
+        <div className="instructions-container">
+            <h1 className="instructions-title">Instruction</h1>
+            <p className="instructions-description">
+            The data visualization is using the Travel Experience in Public Transport Dataset (https://osf.io/rgkvq/). 
+            The static and interactive maps were created and developed by Quantum Geographic Information System (QGIS) software and D3.js with React respectively.
+            The static map contains of 4 images which are depict: heart rate variability (HRV), heart rate median absolute deviation (HR_mad), stress level, and journey satisfaction values.
+            The interactive map contains of a histogram and a map. You can adjust in "Y-Value Filter" to decided either HRV, HR_mad, stress level, or journey satisfation.
+            The details of the instruction of the each map can be found in the respective page.
 
-       
-            <div style={{ margin: '10px', marginTop: '50px' }}>
-             
-                <div>
-                    <input
-                        type="checkbox"
-                        checked={isQGISChecked}
-                        onChange={() => {
-                            setIsQGISChecked(!isQGISChecked);
-                            setErrorMessage(''); 
-                        }}
-                    />
-                    <label style={{ marginLeft: '5px' }}>
-                        I have finished with the map and ready to fill in the questionnaire.
-                    </label>
-                </div>
+            </p>
+            <p className="instructions-description">
+            First, you will explore the QGIS map and then the D3-React map. You need to gain as much information as you can. 
+            There is no limited time for this experiment, and you can make your notes. Once you finish with the map, click the questionnaire button, fill in the form, and submit it. 
+            After completing the two questionnaires, then you can click the "Finish" button to end the experiment.
 
-                <button
-                    onClick={handleQGISRedirect} 
-                    className="d3-que"
-                    style={{ marginLeft: '0px', padding: '10px 20px' }} 
-                >
-                    Go to D3-React Questionnaire
-                </button>
-                <br></br>
-                <br></br>
-             
-                <div>
-                    <input
-                        type="checkbox"
-                        checked={isD3Checked}
-                        onChange={() => {
-                            setIsD3Checked(!isD3Checked);
-                            setErrorMessage('');
-                        }}
-                    />
-                    <label style={{ marginLeft: '5px', marginTop: '60px' }}>
-                        I have submitted the D3-React questionnaire in the Google Form.
-                    </label>
-                </div>
-
-                <button
-                    onClick={handleFinish}
-                    className="backd3"
-                    style={{ marginLeft: '0px', padding: '10px 20px' }} 
-                >
-                    Finish
-                </button>
-
-                {errorMessage && (
-                    <div style={{ color: 'red', marginTop: '10px' }}>
-                        {errorMessage}
-                    </div>
-                )}
+            </p>
+            <p className="instructions-description">
+                Here is the step of this experiment:
+                <ul>
+                    <li>Explore the static map (QGIS)</li>
+                    <li>Fill in the first questionnaire</li>
+                    <li>Explore the interactive map (D3-React)</li>
+                    <li>Fill in the second questionnaire</li>
+                </ul>
+            </p>
+            <div>
+                <input 
+                    type="checkbox" 
+                    checked={isChecked} 
+                    onChange={handleCheckboxChange} 
+                />
+                <label>I declare that I have read and understand the instructions</label>
             </div>
+            {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+            <button onClick={handleClick} className="instructions-button">
+                Go to QGIS Map           
+            </button>
         </div>
     );
 };

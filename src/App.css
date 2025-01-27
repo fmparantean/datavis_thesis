@@ -1,168 +1,4 @@
-
-.marks .graticules,
-.tick line {
-  fill: none;
-  stroke: #ececec;
-}
-
-circle {
-  fill: #056da5; 
-  stroke: #ccc;
-  stroke-width: 0.2px;
-  opacity: 1;
-  transition: fill 0.3s; 
-}
-
-.tick text {
-  fill: #635f5d;
-  font-size: 0.7em; 
-}
-
-.axis-label {  
-  font-size: 0.9em; 
-  font-weight: bold; 
-  fill: #635f5d; 
-}
-
-.title {
-  font-size: 20px; 
-  font-weight: bold; 
-  font-family: Helvetica;
-  fill: rgb(67, 67, 67); 
-  text-anchor: middle; 
-}
-.loading {
-  font-size: 20px; 
-  fill: black; 
-}
-
-
-.marks path {
-  stroke: black; 
-  stroke-width: 1; 
-  opacity: 1; 
-}
-
-.marks path {
-  stroke: white; 
-  stroke-width: 0.2px; 
-  opacity: 1; 
-}
-
-
-.marks {
-  pointer-events: auto; 
-  opacity: 1; 
-}
-
-svg {
-  display: block; 
-  width: 100%; 
-  height: auto; 
-  max-width: 900px; 
-  border: 1px solid rgb(255, 255, 255); 
-}
-
-
-.markscity circle {
-  fill: #000000; 
-  opacity: 1;
-  stroke: rgb(255, 255, 255);
-}
-
-.braunschweig {
-  font-size: 10px; 
-  font-weight: bold; 
-  fill: #0d0d0d; 
-}
-
-
-.legend-tick {
-  font-size: 8px; 
-  font-weight: bold;
-  background-color: #d9dfe0; 
-  fill: black; 
-}
-
-
-.legend-title {
-  font-size: 10px; 
-  font-weight: bold; 
-  fill: rgb(116, 6, 6); 
-}
-
-
-#map-image {
-  width: 100%; 
-  height: auto; 
-  opacity: 1;
-  filter: grayscale(50%); 
-  position: absolute;
-}
-
-
-.filters h3 {
-  margin-bottom: 15px; 
-  font-size: 18px; 
-}
-
-
-.filters {
-  margin-right: 12px; 
-  margin-left: 0px;
-  margin-bottom: 0px; 
-  background: rgb(220, 220, 220); 
-  padding: 12px; 
-  border-radius: 2px; 
-}
-
-
-.filters label {
-  font-size: 12px; 
-  font-weight: bold; 
-  display: block; 
-  margin-bottom: 10px; 
-}
-
-
-.select-dropdown {
-  width: 100%; 
-  padding: 10px; 
-  margin-top: 5px; 
-  border-radius: 4px; 
-  border: 1px solid #bdbbbb; 
-  background-color: #ffffff; 
-  font-size: 11px; 
-}
-
-
-@media (max-width: 600px) {
-  .title {
-    font-size: 20px; 
-  }
-
-  .filters h3 {
-    font-size: 18px; 
-  }
-
-  .filters label, .select-dropdown {
-    font-size: 12px; 
-  }
-
-  .loading {
-    font-size: 20px; 
-  }
-
-  .braunschweig {
-    font-size: 10px; 
-  }
-
-  .legend-tick, .legend-title {
-    font-size: 10px;
-  }
-}
-
-
+/* Welcome page */
 .welcome-container {
   display: flex; 
   flex-direction: column; 
@@ -173,47 +9,45 @@ svg {
   text-align: center; 
   padding: 20px; 
 }
-
-.welcome-title {
+.welcome-container h1 {
   font-size: 24px; 
   font-weight: bold; 
   color: #333; 
-  margin-bottom: 20px;
-}
-
-.welcome-description {
-  margin: 15px 280px; 
-  text-align: justify;
-  line-height: 40px; 
-  margin-top: 1px;
-}
-
-.welcome-description ul {
-  padding-left: 20px; 
-}
-.welcome-description li {
   margin-bottom: 0px; 
 }
-
-.pagetest {
-  margin: 15px 200px; 
-  text-align: center;
-  line-height: 35px; 
-  margin-top: 1px;
+.welcome-container h2 {
+  font-size: 18px; 
+  font-weight: bold; 
+  color: #000000; 
+  margin-bottom: 0px; 
+}
+.welcome-container h3 {
+  font-size: 18px; 
+  font-weight: normal; 
+  color: #000000; 
+  margin-bottom: 0px;  
+}
+.welcome-container h4 {
+  font-size: 18px; 
+  font-weight: normal; 
+  color: #000000; 
+  margin-bottom: 0px;  
+}
+.welcome-container h5 {
+  font-size: 18px; 
+  font-weight: bold; 
+  color: #000000; 
+  margin-bottom:0px; 
+  margin-top: 20px; 
+}
+.welcome-container .error-message {
+  color: red; 
+  font-weight: bold; 
+  margin-top: 10px;
 }
 
-.pagetest ul {
-  padding-left: 0; 
-  list-style-position: inside; 
-}
-
-.pagetest li {
-  margin-bottom: 0; 
-  text-indent: -1em; 
-  padding-left: 3px; 
-}
-
-.welcome-button {
+/* Instructions Page */
+.instructions-button {
   padding: 10px 20px; 
   font-size: 16px; 
   margin-top: 30px; 
@@ -223,29 +57,86 @@ svg {
   border-radius: 5px; 
   cursor: pointer; 
 }
-
-.welcome-button:hover {
+.instructions-button:hover {
   background-color: #000000; 
 }
 
+/* Page Test */
+.pagetest {
+  margin: 15px 200px; 
+  text-align: center;
+  line-height: 35px; 
+  margin-top: 1px;
+}
+.pagetest ul {
+  padding-left: 0; 
+  list-style-position: inside; 
+}
+.pagetest li {
+  margin-bottom: 0; 
+  text-indent: -1em; 
+  padding-left: 3px; 
+}
+
+/* Instruction Page */
+.instructions-container {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  height: 100vh; 
+  background-color: #f7f7f7; 
+  text-align: center; 
+  padding: 20px; 
+}
+.instructions-title {
+  font-size: 24px; 
+  font-weight: bold; 
+  color: #333; 
+  margin-bottom: 20px;
+}
+.instructions-description {
+  margin: 15px 280px; 
+  text-align: justify;
+  line-height: 40px; 
+  margin-top: 1px;
+}
+.instructions-description ul {
+  padding-left: 20px; 
+}
+.instructions-description li {
+  margin-bottom: 0px; 
+}
+.instructions-button {
+  padding: 10px 20px; 
+  font-size: 16px; 
+  margin-top: 30px; 
+  background-color: #525252; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+.instructions-button:hover {
+  background-color: #000000; 
+}
+
+/* QGIS Page */
 .qgis-container {
   text-align: center; 
   padding: 20px; 
   background-color: #eef;
 }
-
 .qgis-title {
   font-size: 24px; 
   font-weight: bold; 
   color: #333; 
 }
-
 .qgis-image {
   width: 300px; 
   margin: 10px; 
   border: 1px solid #ccc; 
 }
-
 .qgis-back {
   padding: 10px 20px; 
   font-size: 16px; 
@@ -256,12 +147,9 @@ svg {
   border-radius: 5px; 
   cursor: pointer; 
 }
-
 .qgis-back:hover {
   background-color: #000000; 
 }
-
-
 .qgis-que {
   padding: 10px 20px; 
   font-size: 16px; 
@@ -272,9 +160,143 @@ svg {
   border-radius: 5px; 
   cursor: pointer; 
 }
-
 .qgis-que:hover {
   background-color: #134786; 
+}
+
+/* D3MAP */
+/* Histogram */
+.marks .graticules,
+.tick line {
+  fill: none;
+  stroke: #ececec;
+}
+.tick text {
+  fill: #635f5d;
+  font-size: 0.7em; 
+}
+.axis-label {  
+  font-size: 0.9em; 
+  font-weight: bold; 
+  fill: #635f5d; 
+}
+circle {
+  fill: #056da5; 
+  stroke: #ccc;
+  stroke-width: 0.2px;
+  opacity: 1;
+  transition: fill 0.3s; 
+}
+
+
+.title {
+  font-size: 20px; 
+  font-weight: bold; 
+  font-family: Helvetica;
+  fill: rgb(67, 67, 67); 
+  text-anchor: middle; 
+}
+svg {
+  display: block; 
+  width: 100%; 
+  height: auto; 
+  max-width: 900px; 
+  border: 1px solid rgb(255, 255, 255); 
+}
+.loading {
+  font-size: 20px; 
+  fill: black; 
+}
+
+.marks path {
+  stroke: white; 
+  stroke-width: 0.2px; 
+  opacity: 1; 
+}
+.marks {
+  pointer-events: auto; 
+  opacity: 1; 
+}
+
+.markscity circle {
+  fill: #000000; 
+  opacity: 1;
+  stroke: rgb(255, 255, 255);
+}
+.braunschweig {
+  font-size: 10px; 
+  font-weight: bold; 
+  fill: #0d0d0d; 
+}
+.legend-tick {
+  font-size: 9px; 
+  font-weight: bold;
+  background-color: #d9dfe0; 
+  fill: black; 
+}
+.legend-title {
+  font-size: 10px; 
+  font-weight: bold; 
+  fill: rgb(116, 6, 6); 
+}
+
+#map-image {
+  width: 100%; 
+  height: auto; 
+  opacity: 1;
+  filter: grayscale(50%); 
+  position: absolute;
+}
+
+
+/* Filters */
+.filters {
+  margin-right: 12px; 
+  margin-left: 0px;
+  margin-bottom: 0px; 
+  background: rgb(220, 220, 220); 
+  padding: 12px; 
+  border-radius: 2px; 
+}
+.filters h3 {
+  margin-bottom: 15px; 
+  font-size: 18px; 
+}
+.filters label {
+  font-size: 12px; 
+  font-weight: bold; 
+  display: block; 
+  margin-bottom: 10px; 
+}
+.select-dropdown {
+  width: 100%; 
+  padding: 10px; 
+  margin-top: 5px; 
+  border-radius: 4px; 
+  border: 1px solid #bdbbbb; 
+  background-color: #ffffff; 
+  font-size: 11px; 
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 20px; 
+  }
+  .filters h3 {
+    font-size: 18px; 
+  }
+  .filters label, .select-dropdown {
+    font-size: 12px; 
+  }
+  .loading {
+    font-size: 20px; 
+  }
+  .braunschweig {
+    font-size: 10px; 
+  }
+  .legend-tick, .legend-title {
+    font-size: 10px;
+  }
 }
 
 
@@ -288,11 +310,9 @@ svg {
   border-radius: 5px; 
   cursor: pointer; 
 }
-
 .backd3:hover {
   background-color: #000000; 
 }
-
 .d3-que {
   padding: 10px 20px; 
   font-size: 16px; 
@@ -303,59 +323,9 @@ svg {
   border-radius: 5px; 
   cursor: pointer; 
 }
-
 .d3-que:hover {
   background-color: #611212; 
 }
-
-
-.declaration-container {
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center; 
-  height: 100vh; 
-  background-color: #f7f7f7; 
-  text-align: center; 
-  padding: 20px; 
-}
-
-.declaration-container h1 {
-  font-size: 24px; 
-  font-weight: bold; 
-  color: #333; 
-  margin-bottom: 0px; 
-}
-
-.declaration-container h2 {
-  font-size: 18px; 
-  font-weight: bold; 
-  color: #000000; 
-  margin-bottom: 0px; 
-}
-
-.declaration-container h3 {
-  font-size: 18px; 
-  font-weight: normal; 
-  color: #000000; 
-  margin-bottom: 0px;  
-}
-
-.declaration-container h4 {
-  font-size: 18px; 
-  font-weight: normal; 
-  color: #000000; 
-  margin-bottom: 0px;  
-}
-
-.declaration-container h5 {
-  font-size: 18px; 
-  font-weight: bold; 
-  color: #000000; 
-  margin-bottom:0px; 
-  margin-top: 20px; 
-}
-
 .checkboxes {
   display: flex; 
   flex-direction: column; 
@@ -363,8 +333,6 @@ svg {
   justify-content: center; 
   margin-bottom: 20px; 
 }
-
-
 .checkboxes label {
   display: flex; 
   align-items: center; 
@@ -372,28 +340,7 @@ svg {
   cursor: pointer; 
 }
 
-.declaration-container .error-message {
-  color: red; 
-  font-weight: bold; 
-  margin-top: 10px;
-}
-
-.welcome-button {
-  padding: 10px 20px; 
-  font-size: 16px; 
-  margin-top: 30px; 
-  background-color: #525252; 
-  color: white; 
-  border: none; 
-  border-radius: 5px; 
-  cursor: pointer; 
-}
-
-.welcome-button:hover {
-  background-color: #000000; 
-}
-
-.instructions {
+.d3ins {
   width: 600px; 
   font-size: 16px;
   position: absolute; 
@@ -404,15 +351,14 @@ svg {
     line-height: 30px; 
 
 }
-
-.instructions ul {
+.d3ins ul {
   padding-left: 20px; 
 }
-
-.instructions li {
+.d3ins li {
   margin-bottom: 5px;
 }
 
+/* Final Page */
 .final-message {
   text-align: center;
   padding: 50px;

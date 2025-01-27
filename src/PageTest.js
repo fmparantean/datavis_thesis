@@ -59,7 +59,7 @@ const PageTest = ({ onNext }) => {
             <button
                 onClick={handleNext}
                 style={{ marginTop: '20px', padding: '10px 20px', fontSize: '16px' }}
-                className="welcome-button"
+                className="instructions-button"
             >
                 Next
             </button>

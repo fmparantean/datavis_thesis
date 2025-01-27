@@ -98,11 +98,11 @@
 .instructions-description {
   margin: 15px 280px; 
   text-align: justify;
-  line-height: 30px; 
+  line-height: 28px; 
   margin-top: 1px;
 }
 .instructions-description ul {
-  padding-left: 20px; 
+  padding-left: 10px; 
 }
 .instructions-description li {
   margin-bottom: 0px; 
@@ -263,7 +263,7 @@ svg {
   font-size: 18px; 
 }
 .filters label {
-  font-size: 12px; 
+  font-size: 14px; 
   font-weight: bold; 
   display: block; 
   margin-bottom: 10px; 
@@ -275,7 +275,7 @@ svg {
   border-radius: 4px; 
   border: 1px solid #bdbbbb; 
   background-color: #ffffff; 
-  font-size: 11px; 
+  font-size: 12 px; 
 }
 
 @media (max-width: 600px) {

@@ -32,9 +32,9 @@ const D3Ins = ({ setCurrentPage }) => {
                 <li>Again, if you see that these texts are covering the map, please ZOOM OUT (ctrl/command -) your browser.</li>
                 <li>The displayed data on the hexbin map is based on the highlighted area that is marked on the histogram.</li>
                 <li>Move the "brush" extension (blue square) on the histogram to display and change the data in the hexbin map. You can adjust the brush function by sliding it left or right, and resizing it by clicking and dragging on the edge, in or out.</li>
-                <li>On the Filters, you can choose your preferred data that you inted to display on the histogram and hexbin map. Adjust your hexagonal size in “Hexbin size filter".</li>
+                <li>On the Filters, you can choose your preferred data that you inted to display on the histogram and hexbin map. Adjust your hexagonal size in “Hexbin size" filter.</li>
                 <li>Point your mouse at a specific hexagonal shape on the map to find out its mean value and how many data points are contained within.</li>
-                <li>You HAVE NO limited time to explore this map. ENJOY your wandering before you decided to Go to D3-React Questionnaire and then are allowed finish this experiment.
+                <li>You HAVE NO limited time to explore this map. ENJOY your wandering time before decided to Go to D3-React Questionnaire and then are allowed finish this experiment.
                 </li>
             </ul>
 

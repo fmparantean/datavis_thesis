@@ -36,8 +36,8 @@ const QGIS = ({ onBack }) => {
         <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', justifyContent: 'space-between', padding: '20px' }}>
             <div style={{ textAlign: 'center' }}>
                 <h1>The static Map of Travel Experience with QGIS Map</h1>
-                <p>Here is the data visualization: HRV, HR_mad, Stress Level, and Journey Satisfaction. </p>
-                <p>Take some notes and ENJOY your time before deciding to Go to QGIS Questionnaire!</p>
+                <p>There are two lines between Braunscherig Hbf. and Wolfenbüttel bahnhof. The left side in your screen is the Train Lanes and the right side is the Bus Lanes. </p>
+                <p>Take some notes, gain some informations, and ENJOY your time before deciding to Go to QGIS Questionnaire!</p>
            
                 <img src="hrv.png" alt="QGIS Example 1" style={{ width: '450px', margin: '5px' }} />
                 <img src="HR_mad.png" alt="QGIS Example 2" style={{ width: '450px', margin: '5px' }} />

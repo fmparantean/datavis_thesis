@@ -50,7 +50,7 @@
 .instructions-button {
   padding: 10px 20px; 
   font-size: 16px; 
-  margin-top: 30px; 
+  margin-top: 20px; 
   background-color: #525252; 
   color: white; 
   border: none; 
@@ -98,7 +98,7 @@
 .instructions-description {
   margin: 15px 280px; 
   text-align: justify;
-  line-height: 40px; 
+  line-height: 30px; 
   margin-top: 1px;
 }
 .instructions-description ul {

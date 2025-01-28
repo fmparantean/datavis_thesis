@@ -139,7 +139,7 @@
 }
 .qgis-back {
   padding: 10px 20px; 
-  font-size: 16px; 
+  font-size: 14px; 
   margin-top: 20px; 
   background-color: #525252; 
   color: white; 
@@ -152,7 +152,7 @@
 }
 .qgis-que {
   padding: 10px 20px; 
-  font-size: 16px; 
+  font-size: 14px; 
   margin-top: 10px; 
   background-color: #3465c6; 
   color: white; 
@@ -302,7 +302,7 @@ svg {
 
 .backd3 {
   padding: 10px 20px; 
-  font-size: 16px; 
+  font-size: 14px; 
   margin-top: 5px;
   background-color: #525252; 
   color: white; 
@@ -315,7 +315,7 @@ svg {
 }
 .d3-que {
   padding: 10px 20px; 
-  font-size: 16px; 
+  font-size: 14px; 
   margin-top: 5px;
   background-color: #974646; 
   color: white; 
@@ -345,7 +345,7 @@ svg {
   font-size: 16px;
   position: absolute; 
   right:30px; 
-  top: 5%; 
+  top: 3%; 
     margin: 5px 100px; 
     text-align: justify;
     line-height: 30px; 

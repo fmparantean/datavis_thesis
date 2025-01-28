@@ -19,11 +19,11 @@ const Instructions = ({ onQGIS }) => {
 
     return (
         <div className="instructions-container">
-            <h1 className="instructions-title">Instruction</h1>
+            <h1 className="instructions-title">Instructions</h1>
             <p className="instructions-description">
             The data visualization is using the Travel Experience in Public Transport Dataset (https://osf.io/rgkvq/), conducted by Bosch (2024).
             The dataset were collected the comprehensive travel data from 44 participants who navigated a 15 km route using various modes of transportation: tram, bus, and train. 
-            During travelling, the GPS location and heart rate of the participants were capturing in every second by an electrocardiogram (ECG) belt. 
+            During travelling, the GPS location and heart rate of the participants were captured in every second by an electrocardiogram (ECG) belt. 
             On the other hand, the stress level, journey satisfaction, and emotional responses were measured by the questionnares in every 3.5 minutes using an equipped mobile phone.
             </p>
 
@@ -35,24 +35,26 @@ const Instructions = ({ onQGIS }) => {
             </p>
             <p className="instructions-description">
            
-            The hexbin map itself, captured the mean values of the data points that contains inside of the hexbin area. 
-            Therefore, by this appraoch, overlapping visualization of the data points within colosed area on the map can be avoided.
+            The hexbin map itself, represents the mean values of the data points that contains inside of the hexagon shape areas. 
+            Therefore, by this appraoch, the overlapping visualization of the data points within in the colosed area on the map can be avoided.
             
             </p>
             <p className="instructions-description">
-            First, you will explore the QGIS map and then the D3-React map. You need to gain as much information as you can. 
-            There is no limited time for this experiment, and you can make your notes. Once you finish with the first map, click the questionnaire button to fill in the first questionnaire, and submit it.
-            This also aplies to the second map before you click the 'finish' button to end this experiment. 
+            First, you will explore the QGIS map and then the D3-React map. 
+            Once you finish with the first map, click the questionnaire button to fill in the first questionnaire, and submit it.
+            This also aplies to the second map before you click the 'finish' button. 
             After completing both of the questionnaires, then you are allowed to click the "Finish" button to end the experiment.
+            You need to gain as much information as you can. 
+            There is no limited time for this experiment, and you need make your notes.
             </p>
 
             <p className="instructions-description">
                 Here are the informations that you need to find out on the maps:
                 <ul>
-                    <li>The HRV scores when people were commuting with bus and train between Braunscherig Hbf. and Wolfenbüttel bahnhof.</li>
-                    <li>The stress level scores in around Braunscherig Hbf. and Wolfenbüttel bahnhof.</li>
-                    <li>The satisfaction scores when people were using train or bus during travelling between Braunscherig Hbf. and Wolfenbüttel bahnhof.</li>
-                    <li>The HR_mad at around Braunschweig Hbf. and Wolfenbüttel bahnhof.</li>
+                    <li>The HRV scores when people were commuting with the bus and train between Braunscherig Hbf. and Wolfenbüttel bahnhof.</li>
+                    <li>The stress level scores around Braunscherig Hbf. and Wolfenbüttel bahnhof.</li>
+                    <li>The satisfaction scores when people were using the train or bus during travelling between Braunscherig Hbf. and Wolfenbüttel bahnhof.</li>
+                    <li>The HR_mad scores around Braunschweig Hbf. and Wolfenbüttel bahnhof.</li>
                 </ul>
             </p>
             <p className="instructions-description">

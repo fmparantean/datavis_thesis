@@ -20,7 +20,7 @@ const QGIS = ({ onBack }) => {
         if (!isQGISChecked) {
             setErrorQGISMessage('Please confirm that you have finished with the map and are ready to fill in the questionnaire before proceeding.'); 
         } else {
-            window.open("https://forms.gle/hNiaZBJKq7en76wB7", "_blank"); 
+            window.open("https://forms.gle/TFfMEiRt5RiRAkFK8", "_blank"); 
         }
     };
 

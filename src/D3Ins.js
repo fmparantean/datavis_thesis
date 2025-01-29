@@ -33,7 +33,7 @@ const D3Ins = ({ setCurrentPage }) => {
                 <li>The hexbin map needs a time to render the hexagonal shapes especially if you work with "All" participants</li>
                 <li>The displayed data on the hexbin map is based on the highlighted area that is marked on the histogram.</li>
                 <li>Move the "brush" extension (blue square) on the histogram to display and change the data in the hexbin map. You can adjust the brush function by sliding it left or right, and resizing it by clicking and dragging on the edge, in or out.</li>
-                <li>With the brush feature, you are able to choose the data based on the specific days or the entire days</li>
+                <li>With the brush feature, you are able to choose the data based on the specific days or the entire week.</li>
                 <li>On the Filters, you can choose your preferred data that you inted to display on the histogram and hexbin map. Adjust your hexagonal size in “Hexbin size" filter.</li>
                 <li>Point your mouse at a specific hexagonal shape on the map to find out its mean value and how many data points are contained within.</li>
                 <li>You HAVE NO limited time to explore this map. ENJOY your wandering time before decided to Go to D3-React Questionnaire and then are allowed finish this experiment.

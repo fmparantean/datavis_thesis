@@ -209,8 +209,8 @@ svg {
 }
 
 .marks path {
-  stroke: white; 
-  stroke-width: 0.2px; 
+  stroke: rgb(0, 0, 0); 
+  stroke-width: 0.3px; 
   opacity: 1; 
 }
 .marks {

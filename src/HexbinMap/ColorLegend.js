@@ -1,63 +1,71 @@
 import React, { useEffect } from 'react';
 import * as d3 from 'd3';
 
-const ColorLegend = ({ colorScale }) => {
+const ColorLegend = ({ yValueField }) => {
     useEffect(() => {
+        
+        const legendData = {
+            HR_mad_filtered: [
+                { range: '(-3) - (-0.5)', color: '#FFFF00' },
+                { range: '(-0.5) - 0.3', color: '#FFDA00' },
+                { range: '0.3 - 1.1', color: '#FF8C00' },
+                { range: '1.1 - 2.6', color: '#FF4500' },
+                { range: '2.6 - 5', color: '#FF0000' }
+            ],
+            HRV: [
+                { range: '1 - 10', color: '#FFFF00' },
+                { range: '10 - 20', color: '#FFDA00' },
+                { range: '20 - 40', color: '#FF8C00' },
+                { range: '40 - 70', color: '#FF4500' },
+                { range: '70 - 190', color: '#FF0000' }
+            ],
+            stress_xs: [
+                { range: '1 - 2', color: '#FFFF00' },
+                { range: '2 - 4', color: '#FFDA00' },
+                { range: '4 - 6', color: '#FF8C00' },
+                { range: '6 - 8', color: '#FF4500' },
+                { range: '8 - 10', color: '#FF0000' }
+            ],
+            satisfaction_journey_xs: [
+                { range: '1 - 2', color: '#FFFF00' },
+                { range: '2 - 4', color: '#FFDA00' },
+                { range: '4 - 6', color: '#FF8C00' },
+                { range: '6 - 8', color: '#FF4500' },
+                { range: '8 - 10', color: '#FF0000' }
+            ],
+        };
+
         const svg = d3.select('#color-legend')
-            .attr("width", 70) 
-            .attr("height", 300);
+            .attr("width", 90)
+            .attr("height", 200);
 
-        const legendWidth = 20;
-        const legendHeight = 100;
-        svg.selectAll("*").remove();
+        const legendHeight = 20; 
 
-    
-        const gradient = svg.append("defs")
-            .append("linearGradient")
-            .attr("id", "gradient")
-            .attr("x1", "0%")
-            .attr("y1", "0%")
-            .attr("x2", "0%") 
-            .attr("y2", "100%");
+        svg.selectAll("*").remove(); 
 
-     
-        const domain = colorScale.domain();
-        const minValue = domain[0];
-        const maxValue = domain[domain.length - 1];
+      
+        legendData[yValueField].forEach((entry, index) => {
+            const rectY = index * legendHeight; 
 
-  
-        const numStops = 5; 
-        for (let i = 0; i <= numStops; i++) {
-            const value = minValue + (i / numStops) * (maxValue - minValue); 
-            
-            gradient.append("stop")
-                .attr("offset", `${(i / numStops) * 100}%`)
-                .attr("stop-color", colorScale(value)); 
-        }
+           
+            svg.append("rect")
+                .attr("x", 0)
+                .attr("y", rectY)
+                .attr("width", 15)
+                .attr("height", legendHeight)
+                .style("fill", entry.color); 
 
-       
-        svg.append("rect")
-            .attr("class", "gradient-rect")
-            .attr("x", 0)
-            .attr("y", 20)
-            .attr("width", legendWidth)
-            .attr("height", legendHeight)
-            .style("fill", "url(#gradient)");
-
-       
-        const ticks = colorScale.ticks(numStops); 
-        ticks.forEach((tick, index) => {
             svg.append("text")
-                .attr("class", "legend-tick") 
-                .attr("x", legendWidth + 5) 
-                .attr("y", (index / (ticks.length - 1)) * legendHeight + 20) 
-                .attr("text-anchor", "start") 
-                .text(tick.toFixed(2)); 
+                .attr("x", 20) 
+                .attr("y", rectY + legendHeight / 2 + 5) 
+                .attr("font-size", "9px") 
+                .attr("font-weight", "bold") 
+                .attr("text-anchor", "start")
+                .text(entry.range); 
         });
 
-    }, [colorScale]);
-
-    return <svg id="color-legend"></svg>; 
+    }, [yValueField]); 
+    return <svg id="color-legend" className="color-legend" />; 
 };
 
 export default ColorLegend;

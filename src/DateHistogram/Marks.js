@@ -16,7 +16,7 @@ export const Marks = ({
             {data.map((d, index) => (
                 <circle
                     key={index}
-                    cx={xScale(["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][xValue(d)])} 
+                    cx={xScale(["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][xValue(d)])}
                     cy={yScale(yValue(d))}
                     r={circleRadius}
                     fill="red"

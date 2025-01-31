@@ -341,14 +341,14 @@ svg {
 }
 
 .d3ins {
-  width: 600px; 
+  width: 610px; 
   font-size: 16px;
   position: absolute; 
-  right:30px; 
-  top: 3%; 
+  right: 25px; 
+  top: 2%; 
     margin: 5px 100px; 
     text-align: justify;
-    line-height: 30px; 
+    line-height: 27px; 
 
 }
 .d3ins ul {

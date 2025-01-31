@@ -74,7 +74,7 @@ const Welcome = ({ onStart }) => {
                         checked={checkedState[4]}
                         onChange={() => handleCheckboxChange(4)}
                     />
-                    I am allowed to stop this experiment anytime
+                    I am allowed to stop this experiment at anytime
                 </label>
             </div>
 

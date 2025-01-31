@@ -29,19 +29,19 @@ const D3Ins = ({ setCurrentPage }) => {
         <div className="d3ins">
             <h3>How to Operate</h3>
             <ul>
-                <li>Again, if you see that these texts are covering the map, please ZOOM OUT (ctrl/command -) your browser.</li>
-                <li>The hexbin map needs a time to render the hexagonal shapes especially if you work with "All" participants</li>
-                <li>The displayed data on the hexbin map is based on the highlighted area that is marked on the histogram.</li>
-                <li>Move the "brush" extension (blue square) on the histogram to display and change the data in the hexbin map. You can adjust the brush function by sliding it left or right, and resizing it by clicking and dragging on the edge, in or out.</li>
-                <li>With the brush feature, you are able to choose the data based on the specific days or the entire week.</li>
-                <li>On the Filters, you can choose your preferred data that you inted to display on the histogram and hexbin map. Adjust your hexagonal size in “Hexbin size" filter.</li>
-                <li>Point your mouse at a specific hexagonal shape on the map to find out its mean value and how many data points are contained within.</li>
-                <li>You HAVE NO limited time to explore this map. ENJOY your wandering time before decided to Go to D3-React Questionnaire and then are allowed finish this experiment.
-                </li>
+                <li>If you find that these texts are covering the map, please zoom out (Ctrl/Command -) in your browser.</li>
+                <li>The hexbin map needs time to render the hexagonal shapes, especially if you are working with "All" participants.</li>
+                <li>The displayed data on the hexbin map is based on the highlighted area marked on the histogram.</li>
+                <li>Move the "brush" element (blue square) on the histogram to display and change the data in the hexbin map. You can adjust the brush function by sliding it left or right and resizing it by clicking and dragging on the edge, in or out.</li>
+                <li>With the brush feature, you can select data based on specific days or for the entire week.</li>
+                <li>In the Filters, you can choose your preferred data that you intend to display on the histogram and hexbin map. Adjust the hexagonal size using the “Hexbin size” filter.</li>
+                <li>Point your mouse at a specific hexagonal shape on the map to find out its mean value and the number of data points contained within it.</li>
+                <li>You have no time limit to explore this map. Enjoy your wandering time before deciding to proceed to the D3-React Questionnaire, after which you will be allowed to finish this experiment.</li>
             </ul>
+            
 
        
-            <div style={{ margin: '10px', marginTop: '30px' }}>
+            <div style={{ margin: '10px', marginTop: '20px' }}>
              
                 <div>
                     <input
@@ -76,7 +76,7 @@ const D3Ins = ({ setCurrentPage }) => {
                             setErrorMessage('');
                         }}
                     />
-                    <label style={{ marginLeft: '5px', marginTop: '60px' }}>
+                    <label style={{ marginLeft: '5px', marginTop: '10px' }}>
                         I have submitted the D3-React questionnaire in the Google Form.
                     </label>
                 </div>

@@ -1,8 +1,12 @@
-# Getting Started with Create React App
+# A Comparative Experimental Study of Static and Interactive Maps in Visualizing Travel Experience Using Public Transportation 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Experimental Setting.
+This repository holds the code for my master's thesis in presenting static and interactive maps.
+
+## Datasets
+dataset source: https://osf.io/rgkvq/
+
 
 In the project directory, you can run:
 

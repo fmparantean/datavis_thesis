@@ -14,6 +14,8 @@ Deployment link: https://fmparantean.github.io/datavis_thesis/
 
 
 To run the code in Visual Studio Code, delete the first line in "package.json": 
+
 "homepage": "https://fmparantean.github.io/datavis_thesis", 
+
 and type "npm start" in the terminal
 
